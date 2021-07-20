@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_task"
+        android:layout_margin="16dp"
+        style="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_task_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/etv_task_date"
+        app:startIconDrawable="@drawable/ic_calendar"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toStartOf="@id/iv_remove_date"
+        app:layout_constraintBottom_toTopOf="@+id/rv_task">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:textSize="12sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_remove_date"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintStart_toEndOf="@+id/til_task_date"
+        app:layout_constraintTop_toTopOf="@+id/til_task_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/til_task_date"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_task"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="8"
+        tools:listitem="@layout/item_task"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        tools:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/til_task_date"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <include
+        android:id="@+id/i_empty_state"
+        tools:visibility="gone"
+        layout="@layout/empty_state" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_new_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/task_new" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

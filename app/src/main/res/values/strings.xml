@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lista de Tarefas</string>
+    <string name="title_task">Tarefas</string>
+    <string name="title_new_task">Salvar Tarefa</string>
+    <string name="etv_task_title">Título</string>
+    <string name="etv_task_description">Descrição</string>
+    <string name="etv_task_date">Date</string>
+    <string name="etv_task_hour">Hora</string>
+    <string name="task_new">Nova tarefa</string>
+    <string name="menu_item_edit">Editar</string>
+    <string name="menu_item_confirm">Concluído</string>
+    <string name="menu_item_delete">Deletar</string>
+    <string name="task_status_ok">CONCLUÍDO</string>
+    <string name="task_status_pending">PENDENTE</string>
+    <string name="toolbar_title_edit">Edição de Tarefa</string>
+    <string name="toolbar_title_add">Cadastro de Tarefa</string>
+    <string name="empty_state_msg">Ops! Você não possui nenhuma tarefa.</string>
+</resources>
