@@ -1,4 +1,4 @@
-# todolist
+# Lista de Tarefas (todolist)
 
 <img src="https://img.shields.io/static/v1?label=APP&message=Kotlin&color=black"/>
 
