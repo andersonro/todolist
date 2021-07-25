@@ -11,7 +11,7 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
 
     val allTask = taskRepository.AllTask
 
-    fun loadTaskDate(date : String) = taskRepository.taskLoadDate(date.toString())
+    fun loadTaskDate(date : String) = taskRepository.taskLoadDate(date?.toString())
 
     fun loadTaskById(taskId: Long) = taskRepository.taskLoadById(taskId.toLong())
 

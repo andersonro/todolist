@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
 
     private val taskViewModel by viewModels<TaskViewModel>()
-    //private var adapter = TaskListAdapter(this)
     lateinit var adapter: TaskListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,19 +1,16 @@
 package br.com.arodevsistemas.todolist.ui
 
-import android.app.Activity
 import android.os.Bundle
-import android.util.Log
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import br.com.arodevsistemas.todolist.R
 import br.com.arodevsistemas.todolist.databinding.ActivityAddTaskBinding
-import br.com.arodevsistemas.todolist.datasource.TaskDataSource
 import br.com.arodevsistemas.todolist.extensions.format
 import br.com.arodevsistemas.todolist.extensions.text
 import br.com.arodevsistemas.todolist.model.Task
-import br.com.arodevsistemas.todolist.repository.TaskRepository
 import br.com.arodevsistemas.todolist.viewmodel.TaskViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
@@ -40,6 +37,12 @@ class AddTaskActivity : AppCompatActivity() {
                 binding.tilTaskDescription.text = it.description
                 binding.tilTaskDate.text = it.date
                 binding.tilTaskHour.text = it.hour
+
+                if (it.status == "C"){
+                    binding.rbConcluded.isChecked = true
+                }else{
+                    binding.rbPending.isChecked = true
+                }
             }
 
         }
@@ -79,13 +82,26 @@ class AddTaskActivity : AppCompatActivity() {
         }
 
         binding.btnNewTask.setOnClickListener {
+
             if (validaForm()) {
+
+                var radioGroup: RadioGroup = binding.rgStatus
+                var radioButton: RadioButton = findViewById(radioGroup!!.checkedRadioButtonId)
+
+
+                var status : String = if (radioButton.text.equals(getString(R.string.task_status_ok))){
+                    "C"
+                }else{
+                    "P"
+                }
+
                 val task = Task(
                     title = binding.tilTaskTitle.text,
                     description = binding.tilTaskDescription.text,
                     date = binding.tilTaskDate.text,
                     hour = binding.tilTaskHour.text,
-                    id = intExtra.toLong()
+                    id = intExtra.toLong(),
+                    status = status
                 )
 
                 var newTask = if (intExtra.toLong() > 0) {
@@ -105,6 +121,7 @@ class AddTaskActivity : AppCompatActivity() {
             } else {
                 binding.btnNewTask.isEnabled = true
             }
+
 
         }
     }
