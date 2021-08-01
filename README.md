@@ -18,7 +18,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ---
 
 <a href="https://www.linkedin.com/in/anderson-oliveira-77708986/">
+ <!--
  <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4E03AQGz5G1Ty9aY0g/profile-displayphoto-shrink_200_200/0/1516989304857?e=1632960000&v=beta&t=d6hkHVxHvgbVWZz4Fotu6RjR45pO_HvZ5ihROdDa08M" width="100px;" alt=""/>
+ <br />
+ -->
+ <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQG6rNyGxad5Eg/profile-displayphoto-shrink_100_100/0/1627254575798?e=1633564800&v=beta&t=yH8BCuEqSIdY7q96l1f-r-Pe89_t-ohD6jmFIeUTJf0" width="100px;" alt=""/>
  <br />
  <sub><b>Anderson Roberto de Oliveira</b></sub>
 </a>
